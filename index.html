@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find internships across development, design, marketing and more.">
+  <title>Launchpad | Internship Board</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to internships</a>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo" aria-label="Launchpad home">
+        <span class="logo-icon">L</span>
+        launchpad<span class="purple">.</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#main">Find Internships</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <a href="#main" class="nav-button">Explore roles ↗</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">✦ YOUR NEXT CHAPTER STARTS HERE</p>
+          <h1>Find work that<br><span>moves you forward.</span></h1>
+          <p class="hero-description">
+            Discover internships that build real skills, meaningful
+            experience, and a career you’re excited about.
+          </p>
+
+          <div class="stats">
+            <div><strong id="total-count">12</strong><span>Opportunities</span></div>
+            <div><strong>6</strong><span>Career fields</span></div>
+            <div><strong>100%</strong><span>Student focused</span></div>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit"></div>
+          <div class="art-card">
+            <div class="art-icon">✦</div>
+            <small>YOUR POTENTIAL</small>
+            <h2>Make it<br>happen.</h2>
+            <span class="art-arrow">↗</span>
+          </div>
+          <div class="floating-chip chip-top">🟢 Learn by doing</div>
+          <div class="floating-chip chip-bottom">✦ New opportunities</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container listings" aria-labelledby="listing-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE OPPORTUNITY BOARD</p>
+          <h2 id="listing-title">Find your fit<span class="purple">.</span></h2>
+        </div>
+        <p class="muted">Small steps today. Big possibilities tomorrow.</p>
+      </div>
+
+      <form id="filter-form" class="filter-panel" role="search">
+        <div class="field">
+          <label for="search">Search internships</label>
+          <input
+            type="search"
+            id="search"
+            placeholder="Try frontend, design..."
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="field">
+          <label for="domain">Career domain</label>
+          <select id="domain">
+            <option value="all">All domains</option>
+            <option value="Development">Development</option>
+            <option value="Design">Design</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Data">Data & Analytics</option>
+            <option value="Business">Business</option>
+            <option value="Content">Content</option>
+          </select>
+        </div>
+
+        <button class="primary-button" type="submit">⌕ Find roles</button>
+      </form>
+
+      <div class="results-bar">
+        <p id="results-count" aria-live="polite">Showing 12 opportunities</p>
+        <button id="reset" class="reset-button" type="button">Clear filters ↺</button>
+      </div>
+
+      <div id="internship-grid" class="internship-grid"
+           aria-live="polite" aria-busy="false"></div>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <div class="empty-icon">⌕</div>
+        <h3>No internships found</h3>
+        <p>Try a different keyword or select another career domain.</p>
+        <button id="empty-reset" class="primary-button" type="button">
+          Clear all filters
+        </button>
+      </div>
+
+      <div id="error-state" class="empty-state" role="alert" hidden>
+        <h3>Something went wrong</h3>
+        <p>We couldn't display the internships. Please try again.</p>
+        <button id="retry" class="primary-button" type="button">Try again</button>
+      </div>
+
+      <p class="demo-note">
+        Demo project · Internship listings are fictional examples.
+      </p>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">BUILT FOR YOUR FIRST STEP</p>
+          <h2>Experience starts<br>with a <span class="purple">yes.</span></h2>
+        </div>
+
+        <p class="muted">
+          Explore roles, learn what excites you, and take your next step.
+          Launchpad is a practice project built with semantic HTML,
+          responsive CSS, and vanilla JavaScript.
+        </p>
+
+        <a href="#main" class="about-link">Back to opportunities ↑</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <a href="#" class="logo">
+        <span class="logo-icon">L</span>
+        launchpad<span class="purple">.</span>
+      </a>
+      <p>Made for learners, built for possibilities.</p>
+      <span>© <span id="year"></span> Launchpad Board</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
